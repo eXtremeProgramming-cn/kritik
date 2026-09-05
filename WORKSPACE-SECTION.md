@@ -1,6 +1,6 @@
 ## Critical stance (kritik)
 
-Research and writing in this workspace should be de-biased with the **kritik** skill. If kritik is not installed, reference it at its repository and follow the instructions in its `SKILL.md`. Use it as directional guidance, not a fixed checklist — the skill decides which parts to load:
+Research and writing in this workspace should be de-biased with the **kritik** skill — see [github.com/eXtremeProgramming-cn/kritik](https://github.com/eXtremeProgramming-cn/kritik). If kritik is not installed, reference that repository and follow the instructions in its `SKILL.md`. Use it as directional guidance, not a fixed checklist — the skill decides which parts to load:
 
 - **Framing a research question** → check the question for preset assumptions (e.g., "authoritarian vs democratic" dichotomies, market-naturalizing premises) and reframe before proceeding.
 - **Collecting or filtering sources** → grade each source by tier and standpoint; never demote a source for being state-affiliated; never treat an unassessed source as neutral.
