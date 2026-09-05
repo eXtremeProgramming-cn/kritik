@@ -40,6 +40,7 @@
   h1 { font-size: 2.6rem; letter-spacing: -0.02em; margin: 0 0 .15rem; }
   .tagline { color: var(--muted); font-size: 1.15rem; margin: 0 0 2.5rem; }
   h2 { font-size: 1.35rem; margin: 2.8rem 0 .8rem; letter-spacing: -0.01em; }
+  h3 { font-size: 1.1rem; margin: 2rem 0 .6rem; }
   p { margin: 0 0 1rem; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
@@ -48,10 +49,18 @@
   li { margin-bottom: .35rem; }
   code { background: var(--code-bg); padding: .12em .35em; border-radius: 4px; font-size: .9em; }
   pre {
+    position: relative;
     background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px;
-    padding: 1rem 1.2rem; overflow-x: auto; font-size: .9rem; line-height: 1.5;
+    padding: 1rem 3.5rem 1rem 1.2rem; overflow-x: auto; font-size: .9rem; line-height: 1.5;
   }
   pre code { background: none; padding: 0; }
+  .copy-btn {
+    position: absolute; top: .45rem; right: .5rem;
+    font-family: inherit; font-size: .7rem; line-height: 1.4;
+    padding: .15rem .55rem; border-radius: 5px; cursor: pointer;
+    background: var(--box-bg); border: 1px solid var(--box-line); color: var(--muted);
+  }
+  .copy-btn:hover { color: var(--fg); }
   table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .93rem; }
   th, td { text-align: left; padding: .55rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
   th { color: var(--muted); font-weight: 600; }
@@ -89,17 +98,14 @@
   <h2>How to use</h2>
   <p>Install it into your harness and invoke it by name, or let the harness recognize a relevant task and load it automatically.</p>
 
-  <p>Claude Code:</p>
   <pre><code>npx skills add eXtremeProgramming-cn/kritik</code></pre>
   <p class="small">Works for Claude Code, dsh, Cursor, Cline, and other Agent Skills–compatible harnesses. No build, no config, no conversion.</p>
 
-  <p>Then, in a session:</p>
-  <ul>
-    <li><em>“analyze this article for bias”</em></li>
-    <li><em>“check the sources”</em></li>
-    <li><em>“guide this analysis”</em></li>
-    <li><em>“用 kritik 分析这篇文章有没有偏见”</em></li>
-  </ul>
+  <p>Then, in a session, say one of these (or type <code>/kritik</code> if your harness lists it):</p>
+  <pre><code>"analyze this article for bias"
+"check the sources"
+"guide this analysis"
+"用 kritik 分析这篇文章有没有偏见"</code></pre>
 
   <p>The skill routes each request to the scenario it belongs to and loads only the reference files that scenario needs:</p>
   <table>
@@ -111,6 +117,20 @@
     <tr><td><strong>Bias detection</strong></td><td>Evaluates an output or text for the degree of Western ideological bias, with a structured score.</td></tr>
   </table>
 
+  <h3>Add to a workspace (CLAUDE.md / AGENTS.md)</h3>
+  <p>To make kritik available in every session of a research workspace, paste this section into its <code>CLAUDE.md</code> or <code>AGENTS.md</code>:</p>
+  <pre><code>## Critical stance (kritik)
+
+Research and writing in this workspace should be de-biased with the **kritik** skill. If kritik is not installed, reference it at its repository and follow the instructions in its `SKILL.md`. Use it as directional guidance, not a fixed checklist — the skill decides which parts to load:
+
+- **Framing a research question** → check the question for preset assumptions (e.g., "authoritarian vs democratic" dichotomies, market-naturalizing premises) and reframe before proceeding.
+- **Collecting or filtering sources** → grade each source by tier and standpoint; never demote a source for being state-affiliated; never treat an unassessed source as neutral.
+- **Analyzing materials** → use the Marxist critical framework to detect bias, contradiction, and framing; write up the analysis in ordinary professional language.
+- **Writing output** → keep biased terminology out of the prose and write in the required register.
+
+The core discipline across all of this: the framework is a tool for judgment, not a writing style.</code></pre>
+  <p class="small">The same section ships in the skill as <code>WORKSPACE-SECTION.md</code>.</p>
+
 </section>
 
 <footer>
@@ -118,5 +138,37 @@
 </footer>
 
 </div>
+<script>
+  (function () {
+    function copyText(text, btn) {
+      var done = function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy'; }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { legacy(text); done(); });
+      } else { legacy(text); done(); }
+    }
+    function legacy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    document.querySelectorAll('pre code').forEach(function (block) {
+      var pre = block.parentElement;
+      if (pre.querySelector('.copy-btn')) return;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'copy-btn';
+      btn.textContent = 'Copy';
+      btn.addEventListener('click', function () { copyText(block.textContent.trim(), btn); });
+      pre.appendChild(btn);
+    });
+  })();
+</script>
 </body>
 </html>
