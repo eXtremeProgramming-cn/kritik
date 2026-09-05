@@ -23,3 +23,7 @@ Invoke with **kritik** plus a task ("analyze this article for bias", "check the 
 The skill routes by scenario — problem framing, source collection and filtering, analysis, output, and bias detection — loading only the reference files each scenario needs.
 
 The framework is a tool for judging material; it is not a writing style. Use it to evaluate sources and arguments, and write the deliverable in ordinary professional language — the framework's internal terminology stays out of the text.
+
+## License
+
+Released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) — a public-domain dedication. See `LICENSE`.

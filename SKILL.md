@@ -1,5 +1,6 @@
 ---
 name: kritik
+license: CC0-1.0
 description: >
   Ideological de-biasing for analytical and writing tasks. Use when the user asks
   to analyze an article, text, or material for bias; to frame a research question
