@@ -67,7 +67,3 @@ Research and writing in this workspace should be de-biased with the **kritik** s
 
 The core discipline across all of this: the framework is a tool for judgment, not a writing style.
 ```
-
-## License
-
-Released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) — a public-domain dedication. See `LICENSE`.
