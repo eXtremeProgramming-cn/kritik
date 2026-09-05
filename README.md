@@ -24,19 +24,22 @@ Options:
 - **Project-level install** (one project only): run the command inside that project directory.
 - **Specific agent**: add `-a <agent>`.
 
-The older `npx add-skill` command is deprecated and has been renamed to `skills`. Skills are discovered at session start, so start a new session after installing.
+Skills are discovered at session start, so start a new session after installing.
 
 Verify with `npx skills list`; update with `npx skills update kritik`; remove with `npx skills remove kritik`.
 
 ## Use
 
-Say one of these to your assistant (or type `/kritik` if your harness lists it):
+With the skill installed, you can ask AI to do something like:
 
 ```
-"analyze this article for bias"
-"check the sources"
-"guide this analysis"
-"用 kritik 分析这篇文章有没有偏见"
+/kritik check this article for bias
+```
+
+Or, even without installing the skill, you can still ask AI to access it on demand:
+
+```
+use kritik (https://extremeprogramming-cn.github.io/kritik/) to help my analysis during the research
 ```
 
 The skill routes each request to the scenario it belongs to and loads only the reference files that scenario needs:
@@ -49,7 +52,6 @@ The skill routes each request to the scenario it belongs to and loads only the r
 | **Output** | Keeps biased terminology out of the prose and writes in the required register. |
 | **Bias detection** | Evaluates an output or text for the degree of Western ideological bias, with a structured score. |
 
-The framework is a tool for judging material; it is not a writing style. Use it to evaluate sources and arguments, and write the deliverable in ordinary professional language.
 
 ## Add to a workspace (CLAUDE.md / AGENTS.md)
 
