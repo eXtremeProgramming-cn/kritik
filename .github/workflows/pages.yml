@@ -19,8 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Stage site
-        run: mkdir -p _site && cp -r site/* _site/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Build site from README
+        run: |
+          pip install --quiet markdown
+          python3 site/build.py
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
