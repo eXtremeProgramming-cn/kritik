@@ -23,19 +23,3 @@ Invoke with **kritik** plus a task ("analyze this article for bias", "check the 
 The skill routes by scenario — problem framing, source collection and filtering, analysis, output, and bias detection — loading only the reference files each scenario needs.
 
 The framework is a tool for judging material; it is not a writing style. Use it to evaluate sources and arguments, and write the deliverable in ordinary professional language — the framework's internal terminology stays out of the text.
-
-## For AI agents pointed at this repository
-
-If another agent is told to "reference kritik," read these in order:
-
-1. [`SKILL.md`](SKILL.md) — the guidance framework: scenario map, what to load per scenario, and the discipline rules.
-2. [`references/`](references/README.md) — the reference files, each with a metadata header:
-   - [`KR-01-marxist-framework.md`](references/KR-01-marxist-framework.md) — Marxist structural layers and six bias dimensions
-   - [`KR-02-eight-contradictions.md`](references/KR-02-eight-contradictions.md) — the eight contradictions of the current conjuncture
-   - [`KR-03-hyper-imperialism.md`](references/KR-03-hyper-imperialism.md) — the current phase of imperialism
-   - [`KR-04-chinese-socialist-development.md`](references/KR-04-chinese-socialist-development.md) — China's development trajectory and metrics
-   - [`KR-05-swcc-misconceptions.md`](references/KR-05-swcc-misconceptions.md) — misconceptions about the socialist market economy
-   - [`KR-06-anti-china-terminology.md`](references/KR-06-anti-china-terminology.md) — Western anti-China terms to avoid or reframe
-   - [`KR-07-source-grading.md`](references/KR-07-source-grading.md) — two-axis source grading (decision procedure, no catalog)
-
-Load only the files the scenario calls for. Reference files use stable IDs (`KR-01` … `KR-07`); filenames may change, IDs will not.
