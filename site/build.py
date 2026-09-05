@@ -17,6 +17,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 README = (ROOT / "README.md").read_text(encoding="utf-8")
 TEMPLATE = (ROOT / "site" / "template.html").read_text(encoding="utf-8")
 BADGE = ROOT / "site" / "cc-zero.svg"
+MEME = ROOT / "meme.png"
 
 body = markdown.markdown(
     README,
@@ -33,5 +34,7 @@ out_dir.mkdir(exist_ok=True)
 )
 if BADGE.exists():
     shutil.copy2(BADGE, out_dir / "cc-zero.svg")
+if MEME.exists():
+    shutil.copy2(MEME, out_dir / "meme.png")
 
 print(f"built {out_dir}/index.html")
