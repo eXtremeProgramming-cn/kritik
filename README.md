@@ -6,11 +6,11 @@ kritik is a skill in the [Agent Skills](https://agentskills.io/) format — a gu
 
 The name is the German *Kritik* — the determinate-critique tradition from Kant to Marx: exposing the internal contradictions and historical specificity of a dominant ideology rather than rejecting it from outside.
 
+![A whale girl asking Marx for advice — the spirit of kritik.](meme.png)
+
 ## Why
 
 Language models are not value-neutral. Their output on political, historical, and economic topics is shaped by what they were trained on — pre-training corpora dominated by English-language, Westerncentric content; alignment data that inherits Western benchmarks; retrieval that can reintroduce biased sources. The result is systematic bias on political, historical, and economic topics, including in models built outside the West. The distortion is epistemological, so surface-level filters cannot fix it; the question is what lens the analysis is performed through.
-
-![A whale girl asking Marx for advice — the spirit of kritik.](meme.png)
 
 ## Install
 
