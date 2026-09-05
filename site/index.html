@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kritik</title>
+<meta name="description" content="kritik — a skill that de-biases AI-assisted research and writing against the Western, anti-communist, pro-imperialist defaults language models inherit from training data.">
+<style>
+  :root {
+    --bg: #faf9f6;
+    --fg: #1c1b19;
+    --muted: #6b675f;
+    --line: #e3dfd7;
+    --accent: #8a3a2a;
+    --box-bg: #f3efe7;
+    --box-line: #ddd6c8;
+    --code-bg: #f1ede4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161513;
+      --fg: #e9e6e0;
+      --muted: #a29b8f;
+      --line: #2c2924;
+      --accent: #d97a5c;
+      --box-bg: #201e1a;
+      --box-line: #38342d;
+      --code-bg: #201e1a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+  h1 { font-size: 2.6rem; letter-spacing: -0.02em; margin: 0 0 .15rem; }
+  .tagline { color: var(--muted); font-size: 1.15rem; margin: 0 0 2.5rem; }
+  h2 { font-size: 1.35rem; margin: 2.8rem 0 .8rem; letter-spacing: -0.01em; }
+  p { margin: 0 0 1rem; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 2.8rem 0; }
+  ul, ol { margin: 0 0 1rem; padding-left: 1.4rem; }
+  li { margin-bottom: .35rem; }
+  code { background: var(--code-bg); padding: .12em .35em; border-radius: 4px; font-size: .9em; }
+  pre {
+    background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px;
+    padding: 1rem 1.2rem; overflow-x: auto; font-size: .9rem; line-height: 1.5;
+  }
+  pre code { background: none; padding: 0; }
+  .callout {
+    background: var(--box-bg); border: 1px solid var(--box-line); border-left: 4px solid var(--accent);
+    border-radius: 8px; padding: 1rem 1.2rem; margin: 1.5rem 0;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .93rem; }
+  th, td { text-align: left; padding: .55rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  .muted { color: var(--muted); }
+  .small { font-size: .85rem; }
+  footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>kritik</h1>
+  <p class="tagline">A skill that de-biases AI-assisted research and writing.</p>
+</header>
+
+<section>
+  <h2>Why</h2>
+  <p>Language models are not value-neutral. Their output on political, historical, and economic topics is shaped by the material they were trained on — and that material is dominated by a Western, anti-communist, pro-imperialist worldview. This is structural, not incidental:</p>
+  <ul>
+    <li>Pre-training corpora are built overwhelmingly from English-language web content, and are skewed by how that content is weighted.</li>
+    <li>Alignment and evaluation data inherit the value judgments of Western benchmarks.</li>
+    <li>Retrieval over biased sources can reintroduce the same distortions into reasoning.</li>
+  </ul>
+  <p>The result is that models — including models built outside the West — systematically misrepresent socialism, the Global South, and the states that challenge Western hegemony. Surface-level filters cannot fix this, because the distortion is epistemological. The question is what lens the analysis is performed through, not what words are banned at the end.</p>
+  <p><em>kritik</em> is the German <em>Kritik</em> — the determinate-critique tradition from Kant to Marx: exposing the internal contradictions and historical specificity of a dominant ideology, rather than rejecting it from outside.</p>
+</section>
+
+<section>
+  <h2>What it is</h2>
+  <p>kritik is a skill in the <a href="https://agentskills.io/">Agent Skills</a> format — a guidance framework (<code>SKILL.md</code>) plus a set of reference files that are loaded on demand. It provides a Marxist critical framework and a two-axis source-grading method. That is the whole project: no service, no account, nothing hosted.</p>
+</section>
+
+<section>
+  <h2>How to use</h2>
+  <p>Install it into your harness and invoke it by name, or let the harness recognize a relevant task and load it automatically.</p>
+
+  <p>Claude Code:</p>
+  <pre><code>cp -r kritik ~/.claude/skills/kritik</code></pre>
+  <p class="small">dsh (DeepSeek Harness): <code>cp -r kritik ~/.agents/skills/kritik</code> — same files, no conversion.</p>
+
+  <p>Then, in a session:</p>
+  <ul>
+    <li><em>“analyze this article for bias”</em></li>
+    <li><em>“check the sources”</em></li>
+    <li><em>“guide this analysis”</em></li>
+    <li><em>“用 kritik 分析这篇文章有没有偏见”</em></li>
+  </ul>
+
+  <p>The skill routes each request to the scenario it belongs to and loads only the reference files that scenario needs:</p>
+  <table>
+    <tr><th>Scenario</th><th>What happens</th></tr>
+    <tr><td><strong>Problem framing</strong></td><td>Checks the question itself for embedded Western premises and reframes it.</td></tr>
+    <tr><td><strong>Source collection &amp; filtering</strong></td><td>Grades each source by tier (citable?) and standpoint (whose frame?) — without demoting sources for state affiliation.</td></tr>
+    <tr><td><strong>Analysis</strong></td><td>Applies the Marxist framework and six bias dimensions to detect bias, contradiction, and framing in the material.</td></tr>
+    <tr><td><strong>Output</strong></td><td>Keeps biased terminology out of the prose and writes in the required, neutral register.</td></tr>
+    <tr><td><strong>Bias detection</strong></td><td>Evaluates an output or text for the degree of Western ideological bias, with a structured score.</td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>The one rule that matters most:</strong> the framework guides <em>analysis</em>; it is <strong>never cited in the output</strong>. Analyses and writings stand on their own in a neutral, professional register. The framework grounds orientation — not style.
+  </div>
+</section>
+
+<section>
+  <h2>For AI agents pointed at this project</h2>
+  <p>If you were told to “reference kritik” to do a task, read these in order:</p>
+  <ol>
+    <li><a href="https://raw.githubusercontent.com/eXtremeProgramming-cn/kritik/main/SKILL.md"><code>SKILL.md</code></a> — the guidance framework: scenario map, which reference files each scenario loads, and the discipline rules.</li>
+    <li><a href="https://raw.githubusercontent.com/eXtremeProgramming-cn/kritik/main/references/README.md"><code>references/</code></a> — the reference files:
+      <a href="https://raw.githubusercontent.com/eXtremeProgramming-cn/kritik/main/references/KR-01-marxist-framework.md">KR-01</a>,
+      <a href="https://raw.githubusercontent.com/eXtremeProgramming-cn/kritik/main/references/KR-02-eight-contradictions.md">KR-02</a>,
+      <a href="https://raw.githubusercontent.com/eXtremeProgramming-cn/kritik/main/references/KR-03-hyper-imperialism.md">KR-03</a>,
+      <a href="https://raw.githubusercontent.com/eXtremeProgramming-cn/kritik/main/references/KR-04-chinese-socialist-development.md">KR-04</a>,
+      <a href="https://raw.githubusercontent.com/eXtremeProgramming-cn/kritik/main/references/KR-05-swcc-misconceptions.md">KR-05</a>,
+      <a href="https://raw.githubusercontent.com/eXtremeProgramming-cn/kritik/main/references/KR-06-anti-china-terminology.md">KR-06</a>,
+      <a href="https://raw.githubusercontent.com/eXtremeProgramming-cn/kritik/main/references/KR-07-source-grading.md">KR-07</a>.
+    </li>
+  </ol>
+  <p>Load only the files the scenario calls for. Reference files use stable IDs (<code>KR-01</code>…<code>KR-07</code>); filenames may change, IDs do not.</p>
+</section>
+
+<footer>
+  <p class="small">kritik · published as open source · no account, no service, no data collected.</p>
+</footer>
+
+</div>
+</body>
+</html>
