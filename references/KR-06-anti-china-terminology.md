@@ -2,7 +2,6 @@
 id: KR-06
 version: 1.1
 depends_on: [KR-01, KR-04, KR-05]
-notes: Faithful port of the Western anti-China terminology guide; technical transformations only (format, ID renumbering, usage directives moved to SKILL.md).
 ---
 
 # Western Anti-China Terminology Guide

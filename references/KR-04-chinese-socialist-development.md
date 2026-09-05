@@ -2,7 +2,6 @@
 id: KR-04
 version: 1.1
 depends_on: [KR-01]
-notes: Faithful port of the Chinese socialist development guide; technical transformations only (format, ID renumbering, stale metadata date superseded by header version, usage directives moved to SKILL.md).
 ---
 
 # Chinese Socialist Development Guide

@@ -1,36 +1,44 @@
 # Install
 
-kritik is an [Agent Skills](https://agentskills.io/)-standard skill. The whole repository **is** the skill: `SKILL.md` at the root, reference files under `references/`. Installing = copying this directory into a skills directory — no build, no configuration, no conversion.
-
-## Claude Code
-
-Personal (all projects):
+kritik is an [Agent Skills](https://agentskills.io/)-standard skill. The repository root **is** the skill: `SKILL.md` at the top, reference files under `references/`. Install it with the standard skills CLI:
 
 ```bash
-cp -r kritik ~/.claude/skills/kritik
+npx skills add eXtremeProgramming-cn/kritik
 ```
 
-Project-local (one project only):
+(The older `npx add-skill` command is deprecated and has been renamed to `skills`.)
 
-```bash
-cp -r kritik /path/to/project/.claude/skills/kritik
-```
+This clones the repository and:
 
-## dsh (DeepSeek Harness)
+- installs the skill into `~/.agents/skills/kritik` (the universal Agent Skills location), and
+- symlinks it into the agent harnesses on your machine that read that standard — Claude Code, dsh, Cursor, Cline, Codex, and others.
 
-```bash
-cp -r kritik ~/.agents/skills/kritik
-```
+No build, no configuration, no conversion.
+
+## Scope and options
+
+- **User-wide install** (recommended): `npx skills add eXtremeProgramming-cn/kritik -g`
+- **Project-level install** (one project only): run the command inside that project directory.
+- **Specific agent**: add `-a <agent>` (or `# install to all detected harnesses`).
 
 ## Verify
 
-Start a session in a harness that has the skill installed, then invoke it:
+```bash
+npx skills list
+```
 
-- Type `/kritik` (if the harness lists slash commands), or
-- Say: "use kritik to analyze this text for bias" (or "用 kritik 分析这篇文章有没有偏见"), and confirm the model routes into a kritik scenario rather than answering generically.
+should show `kritik`. Then start a new session and invoke it:
 
-If the harness listed kritik but the model does not seem to use it, check the harness's skill-discovery logs — the typical causes are the directory being nested one level too deep (the skills directory must contain a `SKILL.md` directly) or the harness reading a different skills path.
+- Type `/kritik`, or
+- Say: "use kritik to analyze this text for bias" (or "用 kritik 分析这篇文章有没有偏见").
 
-## Updating
+Skills are discovered at session start — a new session is needed after installing.
 
-Replace the directory contents in place. Reference files use stable IDs (`KR-01` … `KR-07`); to update a reference, overwrite its file and bump the `version` in its metadata header.
+## Update and remove
+
+```bash
+npx skills update kritik      # update to the latest published version
+npx skills remove kritik       # uninstall
+```
+
+Reference files use stable IDs (`KR-01` … `KR-07`); to update a reference in place, overwrite its file and bump the `version` in its metadata header.

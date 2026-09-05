@@ -2,7 +2,6 @@
 id: KR-05
 version: 1.1
 depends_on: [KR-01, KR-04]
-notes: Faithful port of the socialist-market-economy misconceptions guide; technical transformations only (format, ID renumbering, usage directives moved to SKILL.md).
 ---
 
 # Socialist Market Economy Misconceptions Guide

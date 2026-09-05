@@ -2,7 +2,6 @@
 id: KR-02
 version: 1.1
 depends_on: [KR-01]
-notes: Faithful port of the eight-contradictions framework; technical transformations only (format, ID renumbering, usage directives moved to SKILL.md).
 ---
 
 # Eight Contradictions Framework

@@ -2,7 +2,6 @@
 id: KR-01
 version: 1.2
 depends_on: []
-notes: Faithful port of the source framework; technical transformations only (format, ID renumbering, trace removal). v1.2 rewrote the purpose meta-paragraph in plain register, no change to the framework content.
 ---
 
 # Marxist Framework and Bias Detection

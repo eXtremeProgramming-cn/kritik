@@ -10,10 +10,11 @@ Language models are not value-neutral. Pre-training corpora are dominated by Eng
 
 ## Install
 
-- **Claude Code**: copy this directory to `~/.claude/skills/kritik/` (personal) or `.claude/skills/kritik/` (project).
-- **dsh (DeepSeek Harness)**: copy this directory to `~/.agents/skills/kritik/`.
+```bash
+npx skills add eXtremeProgramming-cn/kritik
+```
 
-See `INSTALL.md`. Both harnesses consume the same Agent Skills format — no conversion needed.
+This works for Claude Code, dsh, and other Agent Skills–compatible harnesses — the skill installs to the universal `~/.agents/skills/kritik` location and symlinks into the harnesses on your machine. See `INSTALL.md`.
 
 ## Use
 

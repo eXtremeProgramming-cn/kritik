@@ -2,7 +2,6 @@
 id: KR-03
 version: 1.1
 depends_on: [KR-01, KR-02]
-notes: Faithful port of the hyper-imperialism summary guide; technical transformations only (format, ID renumbering, internal source-version reference removed, usage directives moved to SKILL.md).
 ---
 
 # Hyper-Imperialism Summary Guide

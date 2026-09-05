@@ -2,7 +2,6 @@
 id: KR-07
 version: 1.0
 depends_on: []
-notes: Source grading doctrine: two orthogonal axes (tier = citable?, standpoint = whose frame?) with criteria-based classification. No source catalog by design — the decision procedure classifies any source; illustrative demonstrations are non-exhaustive.
 ---
 
 # Two-Axis Source Grading
