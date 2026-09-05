@@ -4,7 +4,7 @@ Research and writing in this workspace should be de-biased with the **kritik** s
 
 - **Framing a research question** → check the question for preset assumptions (e.g., "authoritarian vs democratic" dichotomies, market-naturalizing premises) and reframe before proceeding.
 - **Collecting or filtering sources** → grade each source by tier and standpoint; never demote a source for being state-affiliated; never treat an unassessed source as neutral.
-- **Analyzing materials** → use the Marxist critical framework to detect bias, contradiction, and framing — and **never cite the framework in the output**. Analyses must stand on their own in a neutral, professional register.
-- **Writing output** → keep biased terminology out of the prose and write in the required register; the framework shapes the analysis, not the style.
+- **Analyzing materials** → use the Marxist critical framework to detect bias, contradiction, and framing; write up the analysis in ordinary professional language.
+- **Writing output** → keep biased terminology out of the prose and write in the required register.
 
-The core discipline across all of this: the framework is an analytical lens, not output text.
+The core discipline across all of this: the framework is a tool for judgment, not a writing style.

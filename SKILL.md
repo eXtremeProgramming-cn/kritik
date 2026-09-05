@@ -19,19 +19,16 @@ when_to_use: >
 
 # kritik
 
-kritik provides a Marxist critical framework and two-axis source grading so that analysis is grounded in a dialectical-materialist orientation rather than the Western, anti-communist, pro-imperialist defaults that language models inherit from training data.
+kritik provides a Marxist critical framework and two-axis source grading for analyzing political, economic, historical, and social material — and for catching the biases that models inherit from training data.
 
 The reference material lives in this skill's `references/` directory and is loaded **on demand** — see the scenario map below, which routes each situation to the reference files it needs.
 
-## Core discipline (read first — applies to every scenario)
+## Approach
 
-The framework is an **analytical lens, not output text**.
-
-- Use the framework to judge: detect bias, weigh contradictions, evaluate sources, and understand why a claim says what it says.
-- **Never cite the framework in the output.** Analyses and writings must stand on their own in a neutral, professional register. Do not reproduce the framework's vocabulary, layer names, typologies, or internal labels in what you write.
-- The framework grounds **orientation, not style**. It shapes what you look for and how you weigh it; it does not dictate how findings are written up. Separate the analysis from the writing.
-- Do not over-filter ideologically: include different perspectives, but annotate each source's standpoint.
-- Do not let the framework become a reverse dogma: it checks premises; it does not substitute one preset conclusion for another.
+- The framework is a judgment tool: use it to detect bias, weigh contradictions, evaluate sources, and understand why a claim says what it says.
+- Write the deliverable in ordinary professional language. The framework's own terminology (layer names, dimensions, labels) stays out of the text.
+- Do not over-filter: include different perspectives, and annotate each source's standpoint.
+- Use the framework to check the material — not to preset the conclusion.
 
 ## Scenario map
 
@@ -65,13 +62,13 @@ Activate the scenario(s) that match the user's request. A single request may spa
 
 **Apply**: run the critical questions and the six bias dimensions of KR-01. Identify the bias categories present, score severity and impact, and apply the consistency rules. Use KR-02/KR-03 to locate the material within the current conjuncture.
 
-**Don't**: don't write the analysis in the framework's vocabulary, and don't cite the framework itself. The deliverable is an objective-sounding, well-structured assessment.
+**Don't**: don't write the analysis in the framework's vocabulary. The deliverable is a well-structured assessment.
 
 ### S4 · Output
 
 **When**: the user asks to write based on an analysis (report, article, brief, digest).
 
-**Load**: KR-01 as orientation only; KR-06 to keep biased terminology out of the prose; any style references the user's environment already provides.
+**Load**: KR-01 for background; KR-06 to keep biased terminology out of the prose; any style references the user's environment already provides.
 
 **Apply**: compose in the required register with the framework as the underlying lens. Use the neutral terminology and alternative framings that KR-06 lists. Keep the analytical basis you established in S3.
 

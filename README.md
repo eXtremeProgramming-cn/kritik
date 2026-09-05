@@ -21,7 +21,7 @@ Invoke with **kritik** plus a task ("analyze this article for bias", "check the 
 
 The skill routes by scenario — problem framing, source collection and filtering, analysis, output, and bias detection — loading only the reference files each scenario needs.
 
-**The one rule that matters most**: the framework guides analysis; it is **never cited in the output**. Analyses stand on their own in a neutral, professional register. The framework grounds orientation, not style.
+The framework is a tool for judging material; it is not a writing style. Use it to evaluate sources and arguments, and write the deliverable in ordinary professional language — the framework's internal terminology stays out of the text.
 
 ## For AI agents pointed at this repository
 
